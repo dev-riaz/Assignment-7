@@ -9,7 +9,7 @@ const NavLinks = ({ href, children, icon }) => {
   return (
     <Link
       href={href}
-      className={`text-[#64748B] p-2 rounded ${pathName === href ? "bg-[#244D3F] text-white" : ""}`}
+      className={`text-[#64748B] p-2 rounded-xl ${pathName === href ? "bg-[#244D3F] text-white" : ""}`}
     >
       <div>
         {icon}

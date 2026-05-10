@@ -5,7 +5,7 @@ import StatsCard from "../statsCard/StatsCard";
 
 const Banner = () => {
   return (
-    <div className="w-4xl mx-auto">
+    <div className="w-4xl mx-auto py-4">
       <div className="hero py-4">
         <div className="hero-content text-center">
           <div className="space-y-4">

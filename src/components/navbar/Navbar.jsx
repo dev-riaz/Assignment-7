@@ -4,6 +4,7 @@ import { IoMdTime } from "react-icons/io";
 import { RiHome2Line } from "react-icons/ri";
 import { TfiStatsUp } from "react-icons/tfi";
 import NavLinks from "./NavLinks";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
 
 const Navbar = () => {
   const links = [
@@ -25,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-2xl">
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -60,9 +61,12 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <a className="text-xl">
-            <span className="font-bold text-2xl">Keen</span>Keeper
-          </a>
+          <div className="flex justify-center items-center">
+            <span className="bg-[#244D3F] text-2xl text-white p-1 rounded-xl mr-2">
+              <AiOutlineUsergroupAdd />
+            </span>
+            <h1 className="text-[#244D3F] text-2xl font-bold"><span className="text-[#1F2937]">Keen</span>Keeper</h1>
+          </div>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="flex justify-center items-center gap-5 ">

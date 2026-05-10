@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 
 const Card = ({ friend }) => {
-  console.log(friend);
+//   console.log(friend);
 
   return (
-    <div className="card bg-base-100 shadow-sm p-4">
+    <div className="card bg-base-100 shadow-sm p-4 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer">
       <div className="flex justify-center">
         <Image
           className="rounded-full object-cover"
