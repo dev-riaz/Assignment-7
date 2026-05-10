@@ -8,7 +8,7 @@ import NavLinks from "./NavLinks";
 const Navbar = () => {
   const links = [
     {
-      path: "/home",
+      path: "/",
       text: "Home",
       icon: <RiHome2Line />,
     },
@@ -61,7 +61,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="text-xl">
-            <span>Keen</span>Keeper
+            <span className="font-bold text-2xl">Keen</span>Keeper
           </a>
         </div>
         <div className="navbar-end hidden lg:flex">
