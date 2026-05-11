@@ -5,11 +5,10 @@ import React, { useContext } from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaVideo } from "react-icons/fa";
 import { MdTextsms } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const HandleBtn = ({ fr }) => {
   const [friendsData, setFriendsData] = useContext(FriendContext);
-  console.log(friendsData);
-  // console.log(data);
 
   const handleClick = (type) => {
     const newFriend = {
@@ -18,6 +17,23 @@ const HandleBtn = ({ fr }) => {
     };
 
     setFriendsData([...friendsData, newFriend]);
+    if (type === "Call") {
+      toast.success(<div className="flex items-center gap-3">
+        <BiSolidPhoneCall />
+        <span>Calling started...</span>
+      </div>);
+    } else if (type === "Text") {
+      toast.info(<div className="flex items-center gap-3">
+        <MdTextsms />
+        <span>Message sent!</span>
+      </div>);
+    } else if (type === "Video") {
+      toast.success(<div className="flex items-center gap-3">
+        <FaVideo />
+        <span>Video call started!</span>
+      </div>);
+    }
+    // toast.success("success");
   };
   return (
     <div>
