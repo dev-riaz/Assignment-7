@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BiSolidPhoneCall } from "react-icons/bi";
-import { FaVideo } from "react-icons/fa";
+
+import { FaLongArrowAltLeft } from "react-icons/fa";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
 import { IoArchive } from "react-icons/io5";
-import { MdTextsms } from "react-icons/md";
+
 import { RiDeleteBin6Line } from "react-icons/ri";
+import HandleBtn from "../HandleBtn";
 
 const Friends = async () => {
   const res = await fetch("http://localhost:3000/friends.json");
@@ -20,13 +21,14 @@ const DetailsPage = async ({ params }) => {
 
   const fr = friends.find((fr) => fr.id == id);
 
-
   return (
     <div className="bg-[#F8FAFC] ">
-      <div className="w-4xl mx-auto my-8">
-        <Link href={"/"} className="btn">Back To Home</Link>
+      <div className=" w-4xl mx-auto py-8">
+        <Link href={"/"} className="btn bg-[#244D3F] text-white">
+          <FaLongArrowAltLeft />
+          Back To Home
+        </Link>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
-
           {/* Left Profile Card */}
           <div className="space-y-4">
             <div className="bg-white rounded-xl border border-gray-400/30 p-6 text-center shadow-sm">
@@ -67,17 +69,16 @@ const DetailsPage = async ({ params }) => {
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              <button className="w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 hover:cursor-pointer">
+              <button className="btn w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 hover:cursor-pointer">
                 <HiOutlineBellSnooze className="relative top-[1px] text-xl" />{" "}
                 Snooze 2 Weeks
               </button>
 
-              <button className="w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 hover:cursor-pointer">
-                <IoArchive className="relative top-[1px] text-xl" />{" "}
-               Archive
+              <button className="btn w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 hover:cursor-pointer">
+                <IoArchive className="relative top-[1px] text-xl" /> Archive
               </button>
 
-              <button className="w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 text-red-500 hover:cursor-pointer">
+              <button className="btn w-full flex justify-center items-center bg-white border border-gray-400/30 py-2 font-semibold gap-2 text-red-500 hover:cursor-pointer">
                 <RiDeleteBin6Line className="relative top-[1px] text-xl" />{" "}
                 Delete
               </button>
@@ -89,7 +90,9 @@ const DetailsPage = async ({ params }) => {
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bg-white rounded-xl border border-gray-400/30 py-4 text-center shadow-sm">
-                <h1 className="text-4xl font-bold text-[#214b3e]">{fr.days_since_contact}</h1>
+                <h1 className="text-4xl font-bold text-[#214b3e]">
+                  {fr.days_since_contact}
+                </h1>
                 <p className="text-gray-500 mt-2">Days Since Contact</p>
               </div>
 
@@ -100,7 +103,7 @@ const DetailsPage = async ({ params }) => {
 
               <div className="bg-white rounded-xl border border-gray-400/30 text-center py-4 px-2 shadow-sm">
                 <h1 className="text-3xl font-bold text-[#214b3e]">
-                 {fr.next_due_date}
+                  {fr.next_due_date}
                 </h1>
                 <p className="text-gray-500 ">Next Due</p>
               </div>
@@ -129,22 +132,7 @@ const DetailsPage = async ({ params }) => {
                 Quick Check-In
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <button className="border border-gray-400/30 rounded-xl flex flex-col justify-center items-center py-2 hover:cursor-pointer">
-                  <span className="text-3xl"><BiSolidPhoneCall /></span>
-                  <span className="font-medium">Call</span>
-                </button>
-
-                <button className="border border-gray-400/30 rounded-xl flex flex-col justify-center items-center hover:cursor-pointer  py-2">
-                  <span className="text-3xl"><MdTextsms /></span>
-                  <span className="font-medium">Text</span>
-                </button>
-
-                <button className="border border-gray-400/30 rounded-xl flex flex-col justify-center items-center hover:cursor-pointer py-2">
-                  <span className="text-3xl"><FaVideo /></span>
-                  <span className="font-medium">Video</span>
-                </button>
-              </div>
+              <HandleBtn fr={fr}></HandleBtn>
             </div>
           </div>
         </div>

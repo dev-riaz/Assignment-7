@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const Card = ({ friend }) => {
-//   console.log(friend);
 
   return (
     <Link href={`/${friend.id}`} className="card bg-base-100 shadow-sm p-4 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer">

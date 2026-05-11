@@ -5,19 +5,8 @@ import { FriendContext } from "./FriendContext";
 const FriendProvider = ({ children }) => {
   const [friendsData, setFriendsData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/friends.json");
-      const data = await res.json();
-
-      setFriendsData(data);
-      
-    };
-    fetchData();
-  }, []);
-
   return (
-    <FriendContext.Provider value={friendsData}>
+    <FriendContext.Provider value={[friendsData,setFriendsData]}>
       {children}
     </FriendContext.Provider>
   );

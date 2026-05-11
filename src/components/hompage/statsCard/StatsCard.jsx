@@ -1,9 +1,10 @@
-"use client";
+
 import { FriendContext } from "@/context/FriendContext";
 import React, { useContext } from "react";
 
-const StatsCard = () => {
-  const data = useContext(FriendContext);
+const StatsCard = async() => {
+ const res = await fetch("http://localhost:3000/friends.json");
+  const data = await res.json();
 
 
   const total = data.length;
