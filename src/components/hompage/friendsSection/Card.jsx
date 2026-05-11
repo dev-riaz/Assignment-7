@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Card = ({ friend }) => {
 //   console.log(friend);
 
   return (
-    <div className="card bg-base-100 shadow-sm p-4 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer">
+    <Link href={`/${friend.id}`} className="card bg-base-100 shadow-sm p-4 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl hover:cursor-pointer">
       <div className="flex justify-center">
         <Image
           className="rounded-full object-cover"
@@ -25,7 +26,7 @@ const Card = ({ friend }) => {
         </div>
         <div className={`badge badge-sm text-white mt-3 ${friend.status==="Overdue"?"bg-red-500/80 ":friend.status==="Upcoming"?"bg-[#244D3F]":friend.status==="Ok"?"bg-yellow-300":""}`}>{friend.status}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 
