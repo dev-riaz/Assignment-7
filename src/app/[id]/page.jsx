@@ -35,12 +35,12 @@ const DetailsPage = async ({ params }) => {
 
   return (
     <div className="bg-[#F8FAFC]">
-      <div className=" md:w-8/12 mx-auto py-8">
+      <div className=" md:w-8/12 mx-auto py-8 p-6">
         <Link href={"/"} className="btn bg-[#244D3F] text-white">
           <FaLongArrowAltLeft />
           Back To Home
         </Link>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
           {/* Left Profile Card */}
           <div className="space-y-4">
             <div className="bg-white rounded-xl border border-gray-400/30 p-6 text-center shadow-sm">

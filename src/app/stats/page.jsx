@@ -6,7 +6,6 @@ import { MdOutlineInbox } from "react-icons/md";
 import {
   Pie,
   PieChart,
-  PieLabelRenderProps,
   Cell,
   ResponsiveContainer,
   Legend,
