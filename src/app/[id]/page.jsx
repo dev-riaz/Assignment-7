@@ -21,6 +21,16 @@ const DetailsPage = async ({ params }) => {
 
   const fr = friends.find((fr) => fr.id == id);
 
+  if (!fr) {
+    return (
+      <div className="bg-[#F8FAFC]">
+        <div className="h-screen flex justify-center items-center">
+        <h1 className="text-3xl font-bold">No Data Found</h1>
+      </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#F8FAFC]">
       <div className=" md:w-8/12 mx-auto py-8">
