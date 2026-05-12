@@ -2,22 +2,8 @@ import { FriendContext } from "@/context/FriendContext";
 import React, { useContext } from "react";
 
 const StatsCard = async () => {
-  //  const res = await fetch("http://localhost:3000/friends.json");
-  //   const data = await res.json();
-  const data = [
-    {
-      id: 2,
-      name: "Sarah Ahmed",
-      picture: "https://randomuser.me/api/portraits/women/44.jpg",
-      email: "sarah.ahmed@example.com",
-      days_since_contact: 5,
-      status: "Upcoming",
-      tags: ["Work", "Designer"],
-      bio: "Colleague from my first job. Always shares creative ideas.",
-      goal: 10,
-      next_due_date: "2025-07-15",
-    },
-  ];
+   const res = await fetch("https://assignment-7-nine-black.vercel.app/friends.json");
+    const data = await res.json();
 
   const total = data.length;
   const overdue = data.filter((f) => f.status === "Overdue").length;
