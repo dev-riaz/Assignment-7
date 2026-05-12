@@ -10,8 +10,22 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import HandleBtn from "../HandleBtn";
 
 const Friends = async () => {
-  const res = await fetch("http://localhost:3000/friends.json");
-  const friendsData = await res.json();
+  // const res = await fetch("http://localhost:3000/friends.json");
+  // const friendsData = await res.json();
+  const friendsData = [
+    {
+      id: 2,
+      name: "Sarah Ahmed",
+      picture: "https://randomuser.me/api/portraits/women/44.jpg",
+      email: "sarah.ahmed@example.com",
+      days_since_contact: 5,
+      status: "Upcoming",
+      tags: ["Work", "Designer"],
+      bio: "Colleague from my first job. Always shares creative ideas.",
+      goal: 10,
+      next_due_date: "2025-07-15",
+    },
+  ];
   return friendsData;
 };
 
@@ -25,8 +39,8 @@ const DetailsPage = async ({ params }) => {
     return (
       <div className="bg-[#F8FAFC]">
         <div className="h-screen flex justify-center items-center">
-        <h1 className="text-3xl font-bold">No Data Found</h1>
-      </div>
+          <h1 className="text-3xl font-bold">No Data Found</h1>
+        </div>
       </div>
     );
   }
