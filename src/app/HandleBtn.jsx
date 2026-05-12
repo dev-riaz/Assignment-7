@@ -14,6 +14,7 @@ const HandleBtn = ({ fr }) => {
     const newFriend = {
       ...fr,
       action: type,
+      date: new Date().toISOString(),
     };
 
     setFriendsData([...friendsData, newFriend]);
@@ -33,14 +34,14 @@ const HandleBtn = ({ fr }) => {
         <span>Video call started!</span>
       </div>);
     }
-    // toast.success("success");
+   
   };
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
         <button
           onClick={() => handleClick("Call")}
-          className="btn flex flex-col py-8 hover:bg-[#244D3F] hover:text-white"
+          className="btn flex flex-row md:flex-col py-8 hover:bg-[#244D3F] hover:text-white"
         >
           <span className="text-3xl">
             <BiSolidPhoneCall />
@@ -50,7 +51,7 @@ const HandleBtn = ({ fr }) => {
 
         <button
           onClick={() => handleClick("Text")}
-          className="btn flex flex-col py-8 hover:bg-[#244D3F] hover:text-white"
+          className="btn flex flex-row md:flex-col py-8 hover:bg-[#244D3F] hover:text-white"
         >
           <span className="text-3xl">
             <MdTextsms />
@@ -59,7 +60,7 @@ const HandleBtn = ({ fr }) => {
         </button>
         <button
           onClick={() => handleClick("Video")}
-          className=" btn flex flex-col py-8 hover:bg-[#244D3F] hover:text-white"
+          className=" btn flex flex-row md:flex-col py-8 hover:bg-[#244D3F] hover:text-white"
         >
           <span className="text-3xl">
             <FaVideo />

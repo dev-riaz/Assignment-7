@@ -22,8 +22,8 @@ const DetailsPage = async ({ params }) => {
   const fr = friends.find((fr) => fr.id == id);
 
   return (
-    <div className="bg-[#F8FAFC] ">
-      <div className=" w-4xl mx-auto py-8">
+    <div className="bg-[#F8FAFC]">
+      <div className=" md:w-8/12 mx-auto py-8">
         <Link href={"/"} className="btn bg-[#244D3F] text-white">
           <FaLongArrowAltLeft />
           Back To Home

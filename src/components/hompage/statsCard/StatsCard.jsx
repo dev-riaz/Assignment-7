@@ -13,8 +13,8 @@ const StatsCard = async() => {
   const ok = data.filter((f) => f.status === "Ok").length;
 
   return (
-    <div className="">
-      <div className="grid grid-cols-4 gap-3 mb-6 text-center">
+    <div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 text-center">
         <div className="bg-white border border-gray-300/45 p-4">
           <h1 className="text-2xl font-bold text-[#244D3F]">{total}</h1>
           <p className="text-gray-400 font-semibold">Total Friends</p>

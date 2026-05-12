@@ -7,12 +7,7 @@ const Footer = () => {
     <>
       <div className="bg-[#244D3F]">
         <footer className="flex flex-col mx-auto items-center  text-base-content rounded p-10 space-y-4">
-          {/* <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </nav> */}
+         
           <h1 className="text-5xl text-white font-bold">KeenKeeper</h1>
           <nav>
             <p className="text-white/70">
@@ -36,7 +31,7 @@ const Footer = () => {
           </nav>
         </footer>
         <hr />
-        <footer className="w-4xl mx-auto sm:footer-horizontal p-4 text-[12px]">
+        <footer className="md:w-8/12 mx-auto sm:footer-horizontal p-2 text-[12px]">
           <aside className="flex justify-between text-white/50">
             <p>
               Copyright © {new Date().getFullYear()} - All right reserved by
